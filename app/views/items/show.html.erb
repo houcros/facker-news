@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @item.deleted %>
+</p>
+
+<p>
+  <strong>Post_Type:</strong>
+  <%= @item.post_type %>
+</p>
+
+<p>
+  <strong>By:</strong>
+  <%= @item.by %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @item.content %>
+</p>
+
+<p>
+  <strong>Dead:</strong>
+  <%= @item.dead %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @item.parent %>
+</p>
+
+<p>
+  <strong>Kids:</strong>
+  <%= @item.kids %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @item.url %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @item.score %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @item.title %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

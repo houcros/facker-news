@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deleted: false
+  type: 
+  by: MyString
+  content: MyText
+  dead: false
+  parent: 1
+  kids: MyString
+  url: MyString
+  score: 1
+  title: MyString
+
+two:
+  deleted: false
+  type: 
+  by: MyString
+  content: MyText
+  dead: false
+  parent: 1
+  kids: MyString
+  url: MyString
+  score: 1
+  title: MyString
