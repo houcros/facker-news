@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150411202645) do
 
   create_table "items", force: true do |t|
     t.boolean  "deleted"
-    t.string   "type"
+    t.string   "post_type"
     t.string   "by"
     t.text     "content"
     t.boolean  "dead"
