@@ -4,10 +4,10 @@ A simple ruby app inspired by *Haker News*.
 
 ## Developed By
 
-Ignacio Lucero Ascencio
-Marc Garnica Caparrós
-Pol Verdaguer Grau
-Zhouyang Xue
++ Ignacio Lucero Ascencio
++ Marc Garnica Caparrós
++ Pol Verdaguer Grau
++ Zhouyang Xue
 
 ## Running Locally
 
