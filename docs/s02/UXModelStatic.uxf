@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="13.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>50</y>
-      <w>190</w>
-      <h>130</h>
+      <x>160</x>
+      <y>112</y>
+      <w>152</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>&lt;&lt;screen&gt;&gt;
 Main
@@ -21,10 +21,10 @@ submittion's comments()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>20</y>
-      <w>170</w>
-      <h>160</h>
+      <x>440</x>
+      <y>88</y>
+      <w>136</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>Submittion
 --
@@ -42,10 +42,10 @@ time : Time
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>70</y>
-      <w>190</w>
-      <h>40</h>
+      <x>304</x>
+      <y>128</y>
+      <w>152</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
 m2=*</panel_attributes>
@@ -54,10 +54,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>40</y>
-      <w>150</w>
-      <h>80</h>
+      <x>672</x>
+      <y>104</y>
+      <w>120</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>User
 --
@@ -68,10 +68,10 @@ username : String
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>550</x>
-      <y>70</y>
-      <w>150</w>
-      <h>40</h>
+      <x>568</x>
+      <y>128</y>
+      <w>120</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
 m2=1</panel_attributes>
@@ -80,10 +80,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>250</y>
-      <w>160</w>
-      <h>90</h>
+      <x>464</x>
+      <y>272</y>
+      <w>128</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Comment
 --
@@ -96,10 +96,10 @@ time : Time</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>570</x>
-      <y>110</y>
-      <w>270</w>
-      <h>210</h>
+      <x>584</x>
+      <y>160</y>
+      <w>216</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1 -author
@@ -109,10 +109,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>170</y>
-      <w>30</w>
-      <h>100</h>
+      <x>520</x>
+      <y>208</y>
+      <w>24</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
 m2=*</panel_attributes>
@@ -121,23 +121,23 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
-      <y>280</y>
-      <w>210</w>
-      <h>110</h>
+      <x>384</x>
+      <y>296</y>
+      <w>160</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=* -reply
 m2=-parent 0..1</panel_attributes>
-    <additional_attributes>140.0;60.0;140.0;90.0;50.0;90.0;50.0;10.0;110.0;10.0</additional_attributes>
+    <additional_attributes>130.0;60.0;130.0;90.0;40.0;90.0;40.0;10.0;100.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>320</y>
-      <w>210</w>
-      <h>130</h>
+      <x>144</x>
+      <y>328</y>
+      <w>168</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>&lt;&lt;screen&gt;&gt;
 Show submittion's comments
@@ -151,10 +151,10 @@ reply comment()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>100</y>
-      <w>190</w>
-      <h>280</h>
+      <x>304</x>
+      <y>152</y>
+      <w>152</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
 m2=1</panel_attributes>
@@ -163,10 +163,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>170</y>
-      <w>180</w>
-      <h>170</h>
+      <x>232</x>
+      <y>208</y>
+      <w>152</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 Sumbittion's comment</panel_attributes>
@@ -175,10 +175,10 @@ Sumbittion's comment</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
-      <y>430</y>
-      <w>190</w>
-      <h>130</h>
+      <x>448</x>
+      <y>416</y>
+      <w>152</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>&lt;&lt;screen&gt;&gt;
 Show comment
@@ -192,10 +192,10 @@ reply()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>550</x>
-      <y>330</y>
-      <w>30</w>
-      <h>120</h>
+      <x>568</x>
+      <y>336</y>
+      <w>24</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
 m2=1</panel_attributes>
@@ -204,10 +204,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>440</y>
-      <w>290</w>
-      <h>60</h>
+      <x>232</x>
+      <y>424</y>
+      <w>232</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 Reply comment</panel_attributes>
@@ -216,10 +216,10 @@ Reply comment</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>540</y>
-      <w>160</w>
-      <h>70</h>
+      <x>224</x>
+      <y>504</y>
+      <w>128</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input form&gt;&gt;
 Reply Form
@@ -230,10 +230,10 @@ text : String</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>500</y>
-      <w>30</w>
-      <h>60</h>
+      <x>288</x>
+      <y>472</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
@@ -241,10 +241,10 @@ text : String</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>50</x>
-      <y>440</y>
-      <w>370</w>
-      <h>90</h>
+      <x>168</x>
+      <y>424</y>
+      <w>296</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 Reply</panel_attributes>
