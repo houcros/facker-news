@@ -4,10 +4,8 @@ one:
   name: MyString
   karma: 1
   about: MyText
-  submitted: MyString
 
 two:
   name: MyString
   karma: 1
   about: MyText
-  submitted: MyString
