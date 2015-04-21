@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Content</th>
       <th>Score</th>
       <th>Num comments</th>
       <th>Author</th>
@@ -16,6 +17,7 @@
     <% @submits.each do |submit| %>
       <tr>
         <td><%= submit.title %></td>
+        <td><%= submit.content %></td>
         <td><%= submit.score %></td>
         <td><%= submit.num_comments %></td>
         <td><%= submit.author %></td>

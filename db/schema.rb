@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421173729) do
+ActiveRecord::Schema.define(version: 20150421185717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150421173729) do
 
   create_table "submits", force: true do |t|
     t.string   "title"
+    t.text     "content"
     t.integer  "score"
     t.integer  "num_comments"
     t.string   "author"
