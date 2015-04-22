@@ -1,40 +1,19 @@
-<%= link_to 'New Submit', new_submit_path %><br><br>
-
 <table>
-  <!--
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Score</th>
-      <th>Num comments</th>
-      <th>Author</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  -->
-
+<%= link_to 'New Submit', new_submit_path %><br><br>
   <tbody>
     <% @submits.each do |submit| %>
       <tr>
-        <td><%= link_to submit.title, submit %> (<%= submit.url %>)</td>
+        <td><%= link_to submit.title, submit%>  (<%= submit.url %>)</td>
       </tr>
       <tr>
-<!--         <td><%= submit.content %></td> -->
-        <td>Created by <%= submit.author %></td>
-        <td><%= submit.score%> points</td>
-        <td><%= submit.num_comments %> comments</td>
-      </tr>
-<!--
-      <tr>
-        <td><%= link_to 'Show', submit %></td>
+        <td><%= submit.score %> points by <%= User.find(submit.user_id).name %> <%= time_ago_in_words(submit.created_at) %> ago | <%= submit.num_comments %> comments     </td>
         <td><%= link_to 'Edit', edit_submit_path(submit) %></td>
         <td><%= link_to 'Destroy', submit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
--->
     <% end %>
   </tbody>
 </table>
 
 <br>
+
+

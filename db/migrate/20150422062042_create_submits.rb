@@ -5,8 +5,8 @@ class CreateSubmits < ActiveRecord::Migration
       t.text :content
       t.integer :score
       t.integer :num_comments
-      t.string :author
       t.string :url
+      t.integer :user_id
 
       t.timestamps
     end

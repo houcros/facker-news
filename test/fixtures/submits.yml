@@ -5,13 +5,13 @@ one:
   content: MyText
   score: 1
   num_comments: 1
-  author: MyString
   url: MyString
+  user_id: 1
 
 two:
   title: MyString
   content: MyText
   score: 1
   num_comments: 1
-  author: MyString
   url: MyString
+  user_id: 1

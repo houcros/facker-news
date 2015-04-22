@@ -21,14 +21,18 @@
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @submit.author %>
-</p>
-
-<p>
   <strong>Url:</strong>
   <%= @submit.url %>
 </p>
+
+<p>
+  <strong>User:</strong>
+  <%= @submit.user_id %>
+</p>
+
+<div>
+  <% Comment.find() %>
+</div>
 
 <%= link_to 'Edit', edit_submit_path(@submit) %> |
 <%= link_to 'Back', submits_path %>

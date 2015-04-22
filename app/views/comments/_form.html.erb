@@ -12,16 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
     <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
   </div>
   <div class="field">
     <%= f.label :deleted %><br>
     <%= f.check_box :deleted %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :comment_id %><br>
+    <%= f.number_field :comment_id %>
+  </div>
+  <div class="field">
+    <%= f.label :submit_id %><br>
+    <%= f.number_field :submit_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

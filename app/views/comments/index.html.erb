@@ -3,9 +3,11 @@
 <table>
   <thead>
     <tr>
-      <th>Author</th>
       <th>Content</th>
       <th>Deleted</th>
+      <th>User</th>
+      <th>Comment</th>
+      <th>Submit</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,9 +15,11 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.author %></td>
         <td><%= comment.content %></td>
         <td><%= comment.deleted %></td>
+        <td><%= comment.user_id %></td>
+        <td><%= comment.comment_id %></td>
+        <td><%= comment.submit_id %></td>
         <td><%= link_to 'Show', comment %></td>
         <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
         <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
