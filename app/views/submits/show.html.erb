@@ -44,7 +44,8 @@
       <% if @submit.id == comment.submit_id %>
         <li><p>
         <%= link_to @user.name, @user %> |
-        <%= time_ago_in_words(comment.created_at) %>
+        <%= time_ago_in_words(comment.created_at) %> |
+        <%= link_to 'reply', new_comment_path %>
       </p></li>
       <p>
         <%= comment.content %>
