@@ -7,9 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<h1>This is Facker News!</h1>
+	<div id='webHeader'><img src='/assets/y18.gif'/><h1>This is Facker News!</h1></div>
 
 <%= yield %>
-
+<div id='footer'></div>
+<p id='footerParagraph'>Guidelines | FAQ | Support | API | Lists | Bookmarklet | DMCA | Y Combinator | Apply | Contact</p>
+<form id='searchMain' action="demo_form.asp">
+	  Search: <input type="text" name="fname"><br>
+	      <input type="hidden" value="Submit">
+</form>
 </body>
 </html>

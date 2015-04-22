@@ -3,10 +3,10 @@
   <tbody>
     <% @submits.each do |submit| %>
       <tr>
-        <td><%= link_to submit.title, submit%>  (<%= submit.url %>)</td>
+        <td class='itemTitle'><%= link_to submit.title, submit%>  (<%= submit.url %>)</td>
       </tr>
       <tr>
-        <td><%= submit.score %> points by <%= User.find(submit.user_id).name %> <%= time_ago_in_words(submit.created_at) %> ago | <%= submit.num_comments %> comments     </td>
+        <td class='itemInfo'><%= submit.score %> points by <%= User.find(submit.user_id).name %> <%= time_ago_in_words(submit.created_at) %> ago | <%= submit.num_comments %> comments     </td>
         <td><%= link_to 'Edit', edit_submit_path(submit) %></td>
         <td><%= link_to 'Destroy', submit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
