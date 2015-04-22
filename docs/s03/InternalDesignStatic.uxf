@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
-      <y>120</y>
+      <x>792</x>
+      <y>200</y>
       <w>152</w>
       <h>48</h>
     </coordinates>
@@ -19,13 +19,15 @@ getSubmits
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1072</x>
-      <y>104</y>
+      <x>1064</x>
+      <y>184</y>
       <w>272</w>
       <h>64</h>
     </coordinates>
     <panel_attributes>&lt;&lt;model&gt;&gt;
 TrGetSubmits
+--
+-submits : OrderedSet(Submits)
 --
 execute()
 </panel_attributes>
@@ -34,8 +36,8 @@ execute()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>944</x>
-      <y>128</y>
+      <x>936</x>
+      <y>208</y>
       <w>144</w>
       <h>40</h>
     </coordinates>
@@ -47,8 +49,8 @@ execute()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>128</y>
+      <x>672</x>
+      <y>208</y>
       <w>136</w>
       <h>40</h>
     </coordinates>
@@ -60,8 +62,8 @@ execute()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>536</x>
-      <y>120</y>
+      <x>528</x>
+      <y>200</y>
       <w>152</w>
       <h>48</h>
     </coordinates>
@@ -75,8 +77,8 @@ ShowSubmits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
-      <y>128</y>
+      <x>416</x>
+      <y>208</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -88,22 +90,22 @@ ShowSubmits
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>120</y>
+      <x>272</x>
+      <y>200</y>
       <w>152</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;client page&gt;&gt;
 submits.html
 --
-//will be rendered as Show comment screen</panel_attributes>
+//will be rendered as Main</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>48</x>
-      <y>120</y>
+      <x>40</x>
+      <y>200</y>
       <w>168</w>
       <h>48</h>
     </coordinates>
@@ -116,8 +118,8 @@ Main
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>208</x>
-      <y>128</y>
+      <x>200</x>
+      <y>208</y>
       <w>88</w>
       <h>40</h>
     </coordinates>
@@ -129,8 +131,8 @@ Main
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
-      <y>336</y>
+      <x>784</x>
+      <y>416</y>
       <w>152</w>
       <h>48</h>
     </coordinates>
@@ -144,15 +146,15 @@ getComments
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>352</x>
-      <y>160</y>
+      <x>344</x>
+      <y>240</y>
       <w>456</w>
       <h>192</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
   &lt;&lt;link&gt;&gt;
   
-{title}
+{idSubmit}
 
 </panel_attributes>
     <additional_attributes>550.0;220.0;10.0;10.0</additional_attributes>
@@ -160,13 +162,17 @@ getComments
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1080</x>
-      <y>328</y>
+      <x>1072</x>
+      <y>408</y>
       <w>272</w>
-      <h>56</h>
+      <h>88</h>
     </coordinates>
     <panel_attributes>&lt;&lt;model&gt;&gt;
 TrGetComments
+--
+-idSubmit
+-idComment
+-comments: OrderedSet(Comments)
 --
 execute()
 </panel_attributes>
@@ -175,8 +181,8 @@ execute()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>344</y>
+      <x>928</x>
+      <y>424</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -188,36 +194,8 @@ execute()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>784</x>
-      <y>216</y>
-      <w>168</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>bg=orange
-*Session*
---
-- submittion
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>864</x>
-      <y>256</y>
-      <w>56</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-   &lt;&lt;use&gt;&gt;
-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>520</x>
-      <y>328</y>
+      <x>512</x>
+      <y>408</y>
       <w>152</w>
       <h>48</h>
     </coordinates>
@@ -231,8 +209,8 @@ ShowSubmitComments
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>432</x>
-      <y>336</y>
+      <x>424</x>
+      <y>416</y>
       <w>104</w>
       <h>40</h>
     </coordinates>
@@ -244,22 +222,22 @@ ShowSubmitComments
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>328</y>
+      <x>280</x>
+      <y>408</y>
       <w>152</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;client page&gt;&gt;
-sub-comments.html
+subComments.html
 --
-//will be rendered as Show comment screen</panel_attributes>
+//will be rendered as Show Submitions screen</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>192</x>
-      <y>336</y>
+      <x>184</x>
+      <y>416</y>
       <w>112</w>
       <h>40</h>
     </coordinates>
@@ -271,8 +249,8 @@ sub-comments.html
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>8</x>
-      <y>328</y>
+      <x>0</x>
+      <y>408</y>
       <w>192</w>
       <h>48</h>
     </coordinates>
@@ -285,8 +263,8 @@ Show submittion's comments
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>664</x>
-      <y>344</y>
+      <x>656</x>
+      <y>424</y>
       <w>144</w>
       <h>40</h>
     </coordinates>
@@ -298,15 +276,15 @@ Show submittion's comments
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>368</y>
+      <x>352</x>
+      <y>448</y>
       <w>520</w>
       <h>184</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
  &lt;&lt;link&gt;&gt;
 
-{id}
+{idComment}
 
 </panel_attributes>
     <additional_attributes>630.0;210.0;10.0;10.0</additional_attributes>
@@ -314,8 +292,8 @@ Show submittion's comments
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>784</x>
-      <y>536</y>
+      <x>776</x>
+      <y>616</y>
       <w>152</w>
       <h>48</h>
     </coordinates>
@@ -329,8 +307,8 @@ getComment
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>928</x>
-      <y>544</y>
+      <x>920</x>
+      <y>624</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -342,13 +320,16 @@ getComment
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1072</x>
-      <y>528</y>
-      <w>272</w>
-      <h>56</h>
+      <x>1064</x>
+      <y>608</y>
+      <w>280</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>&lt;&lt;model&gt;&gt;
 TrGetnfoComment
+--
+-idComment
+-infoComment(Tupla amb tots els atributs)
 --
 execute()
 </panel_attributes>
@@ -357,8 +338,8 @@ execute()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>552</x>
-      <y>536</y>
+      <x>544</x>
+      <y>616</y>
       <w>152</w>
       <h>48</h>
     </coordinates>
@@ -372,8 +353,8 @@ ShowComment
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>696</x>
-      <y>544</y>
+      <x>688</x>
+      <y>624</y>
       <w>104</w>
       <h>40</h>
     </coordinates>
@@ -385,8 +366,8 @@ ShowComment
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>296</x>
-      <y>536</y>
+      <x>288</x>
+      <y>616</y>
       <w>152</w>
       <h>48</h>
     </coordinates>
@@ -399,8 +380,8 @@ comment.html
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>544</y>
+      <x>432</x>
+      <y>624</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -412,8 +393,8 @@ comment.html
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>16</x>
-      <y>536</y>
+      <x>8</x>
+      <y>616</y>
       <w>192</w>
       <h>48</h>
     </coordinates>
@@ -426,8 +407,8 @@ Show comment
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>544</y>
+      <x>192</x>
+      <y>624</y>
       <w>112</w>
       <h>40</h>
     </coordinates>
@@ -439,8 +420,8 @@ Show comment
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>576</y>
+      <x>352</x>
+      <y>656</y>
       <w>24</w>
       <h>96</h>
     </coordinates>
@@ -451,8 +432,8 @@ Show comment
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>296</x>
-      <y>656</y>
+      <x>288</x>
+      <y>736</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -465,8 +446,8 @@ text : String</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>416</x>
-      <y>664</y>
+      <x>408</x>
+      <y>744</y>
       <w>208</w>
       <h>40</h>
     </coordinates>
@@ -478,8 +459,8 @@ text : String</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>608</x>
-      <y>656</y>
+      <x>600</x>
+      <y>736</y>
       <w>152</w>
       <h>48</h>
     </coordinates>
@@ -493,8 +474,8 @@ postReply
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>928</x>
-      <y>656</y>
+      <x>920</x>
+      <y>736</y>
       <w>280</w>
       <h>88</h>
     </coordinates>
@@ -510,8 +491,8 @@ execute()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>664</y>
+      <x>744</x>
+      <y>744</y>
       <w>192</w>
       <h>40</h>
     </coordinates>
@@ -519,5 +500,34 @@ execute()
 &lt;&lt;use&gt;&gt;
 </panel_attributes>
     <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>64</y>
+      <w>152</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;client page&gt;&gt;
+submits.html
+--
+//will be rendered as Show comment screen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>104</y>
+      <w>56</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+  &lt;&lt;link&gt;&gt;
+
+
+</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
