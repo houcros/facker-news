@@ -31,8 +31,26 @@
 </p>
 
 <div>
- <!-- <% Comment.find() %> -->
+  <%= link_to 'Edit', edit_submit_path(@submit) %> |
+  <%= link_to 'Back', submits_path %>
 </div>
+<br><br>
 
-<%= link_to 'Edit', edit_submit_path(@submit) %> |
-<%= link_to 'Back', submits_path %>
+<h3>Comments: </h3>
+<ul>
+    <% @comments = Comment.all %>
+    <% @comments.each do |comment| %>
+      <% @user = User.find(comment.user_id) %>
+      <% if @submit.id == comment.submit_id %>
+        <li><p>
+        <%= link_to @user.name, @user %> |
+        <%= time_ago_in_words(comment.created_at) %> |
+        <%= link_to 'reply', new_comment_path %>
+      </p></li>
+      <p>
+        <%= comment.content %>
+      </p>
+      <% end %>
+    <% end %>
+</ul>
+
