@@ -1,56 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @submit.title %>
-</p>
+<table>
+  <tbody>
+      <tr>
+        <td class='itemTitle'><%= link_to @submit.title, URI.encode(@submit.url) %> (<%= URI.join(@submit.url, "/").to_s %>)</td>
+      </tr>
+      <tr>
+        <td class='itemInfo'><%= @submit.score %> points by <%= @submit.user.name %> <%= time_ago_in_words(@submit.created_at) %> ago</td>
+        <td><%= @submit.submit_type %></td>
+      </tr>
+      <tr>
+        <td><%= link_to 'Edit', edit_submit_path(@submit) %></td>
+        <td><%= link_to 'Destroy', @submit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Content:</strong>
-  <%= @submit.content %>
-</p>
+<%= link_to 'Edit', edit_submit_path(@submit) %> |
+<%= link_to 'Back', submits_path %>
 
-<p>
-  <strong>Score:</strong>
-  <%= @submit.score %>
-</p>
-
-<p>
-  <strong>Num comments:</strong>
-  <%= @submit.num_comments %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @submit.url %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @submit.user_id %>
-</p>
-
-<div>
-  <%= link_to 'Edit', edit_submit_path(@submit) %> |
-  <%= link_to 'Back', submits_path %>
-</div>
-<br><br>
 
 <h3>Comments: </h3>
 <ul>
-    <% @comments = Comment.all %>
-    <% @comments.each do |comment| %>
-      <% @user = User.find(comment.user_id) %>
-      <% if @submit.id == comment.submit_id %>
+    <% @submit.comments.each do |comment| %>
         <li><p>
-        <%= link_to @user.name, @user %> |
+        <%= link_to comment.user.name, comment.user %> |
         <%= time_ago_in_words(comment.created_at) %> |
         <%= link_to 'reply', new_comment_path %>
       </p></li>
       <p>
         <%= comment.content %>
       </p>
-      <% end %>
     <% end %>
 </ul>
-

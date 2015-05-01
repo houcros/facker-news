@@ -2,16 +2,14 @@
 
 one:
   title: MyString
-  content: MyText
   score: 1
-  num_comments: 1
   url: MyString
+  submit_type: MyString
   user_id: 1
 
 two:
   title: MyString
-  content: MyText
   score: 1
-  num_comments: 1
   url: MyString
+  submit_type: MyString
   user_id: 1

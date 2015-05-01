@@ -2,14 +2,12 @@
 
 one:
   content: MyText
-  deleted: false
   user_id: 1
-  comment_id: 1
   submit_id: 1
+  parent_id: 1
 
 two:
   content: MyText
-  deleted: false
   user_id: 1
-  comment_id: 1
   submit_id: 1
+  parent_id: 1

@@ -6,23 +6,18 @@
 </p>
 
 <p>
-  <strong>Deleted:</strong>
-  <%= @comment.deleted %>
-</p>
-
-<p>
   <strong>User:</strong>
   <%= @comment.user_id %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
-  <%= @comment.comment_id %>
+  <strong>Submit:</strong>
+  <%= @comment.submit_id %>
 </p>
 
 <p>
-  <strong>Submit:</strong>
-  <%= @comment.submit_id %>
+  <strong>Parent:</strong>
+  <%= @comment.parent_id %>
 </p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |

@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-	has_many :submits
-	has_many :comments
-	validates_presence_of :name
-	validates_uniqueness_of :name
+	has_many :submits, dependent: :destroy
+	has_many :comments, dependent: :destroy
 end
