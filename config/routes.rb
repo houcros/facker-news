@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  get 'home/show'
+
   resources :comments
 
   resources :submits
@@ -60,4 +66,13 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # Google Auth routes
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :sessions, only: [:create, :destroy]
+  resource :home, only: [:show]
+
 end

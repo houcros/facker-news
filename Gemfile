@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 ruby '2.2.1'
 #ruby '2.0.0'
 
+# Google OAuth for loggin in
+gem "omniauth-google-oauth2", "~> 0.2.1"
+gem 'omniauth'
+
 gem 'cowsay'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
