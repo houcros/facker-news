@@ -16,4 +16,5 @@
 /tmp
 
 # Ignore secret keys
+/config/secrets.yml
 /config/initializers/omniauth.rb
