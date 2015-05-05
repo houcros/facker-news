@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 ruby '2.2.1'
 #ruby '2.0.0'
 
+# Figaro for security issues
+gem 'figaro'
+
 # Google OAuth for loggin in
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'omniauth'
