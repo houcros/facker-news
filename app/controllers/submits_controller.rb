@@ -61,7 +61,7 @@ class SubmitsController < ApplicationController
     end
   end
 
-  # GET /submits/1/upvote
+  # GET /submits/upvote/1
   def upvote
     @submit = Submit.increment_counter(:score, params[:id])
     redirect_to '/'

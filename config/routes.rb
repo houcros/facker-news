@@ -76,6 +76,6 @@ Rails.application.routes.draw do
   resource :home, only: [:show]
 
   # My custom routes
-  get '/submits/:id/upvote', to: 'submits#upvote'
+  get '/submits/upvote/:id', to: 'submits#upvote'
 
 end
