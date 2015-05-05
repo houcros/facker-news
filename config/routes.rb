@@ -75,4 +75,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
 
+  # My custom routes
+  get '/submits/:id/upvote', to: 'submits#upvote'
+
 end

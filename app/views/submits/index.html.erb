@@ -4,7 +4,7 @@
   <tbody>
     <% @submits.each do |submit| %>
       <tr>
-        <td class='itemTitle'><%= link_to submit.title, URI.encode(submit.url) %> (<%= URI.join(submit.url, "/").to_s %>)</td>
+        <td class='itemTitle'><%= link_to '[+]', '/submits/1/upvote' %> <%= link_to submit.title, URI.encode(submit.url) %> (<%= URI.join(submit.url, "/").to_s %>)</td>
       </tr>
       <tr>
         <td class='itemInfo'><%= submit.score %> points by <%= submit.user.name %> <%= time_ago_in_words(submit.created_at) %> ago | <%= link_to 'comments', submit %></td>

@@ -61,6 +61,12 @@ class SubmitsController < ApplicationController
     end
   end
 
+  # GET /submits/1/upvote
+  def upvote
+    @submit = Submit.increment_counter(:score, params[:id])
+    redirect_to '/'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_submit
