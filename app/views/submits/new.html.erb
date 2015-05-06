@@ -1,5 +1,9 @@
 <h1>New submit</h1>
 
-<%= render 'form' %>
+<% if current_user %>
+	<%= render 'form' %>
+<% else %>
+	<p>Please, log in to create a new submission.</p>
+<% end %>
 
 <%= link_to 'Back', submits_path %>
