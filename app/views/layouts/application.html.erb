@@ -9,21 +9,20 @@
 <body>
 	<div id='webHeader'>
     <img src='/assets/original.png'/><h1><%= link_to 'Facker News', root_url %></h1>
-    
-  <div id='sign_out'>
-    <% if current_user %>
-      Signed in as <strong><%= current_user.name %></strong> !
-      <%=link_to "Sign out", signout_path%>
-      <%=link_to 'Edit profile', edit_user_path(current_user) %>
-    <% else %>
-      <a href="/auth/google_oauth2">
-        <img id='googlesign'src="/assets/google.png">
-      </a>
-
-    <% end %>
-   </div>
+    <div id='sign_out'>
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong> !
+        <%=link_to "Sign out", signout_path%>
+      <% else %>
+        <a href="/auth/google_oauth2">
+          <img id='googlesign'src="/assets/google.png">
+        </a>
+      <% end %>
+    </div>
+    <div><%= link_to 'News', submits_path+'?submit_type=new'%></div>
+    <div><%= link_to 'Questions', submits_path+'?submit_type=question'%></div>
   </div>
-
+  
 <%= yield %>
 <div id='footer'></div>
 <p id='footerParagraph'> Facultat d'Informàtica de Barcelona | Ignacio Lucero | Pol Verdaguer | Zhouyang Xue | Marc Garnica</p>
