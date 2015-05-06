@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.integer :karma
       t.text :about
+      t.string :uid
 
       t.timestamps
     end

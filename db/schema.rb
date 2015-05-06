@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150501162339) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150501162339) do
     t.string   "name"
     t.integer  "karma"
     t.text     "about"
+    t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
