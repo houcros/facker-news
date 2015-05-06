@@ -29,6 +29,10 @@ a:link {
 	color: #26C6DA;
 }
 
+a:visited {
+	color: #26C6DA;
+}
+
 a:active {
 	color: #26C6DA;
 }
@@ -55,6 +59,10 @@ a:hover {
 }
 
 .headerLink > a:link {
+	color:white;
+}
+
+.headerLink > a:visited {
 	color:white;
 }
 .headerLink > a:hover {
