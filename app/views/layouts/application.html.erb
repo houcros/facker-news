@@ -8,22 +8,22 @@
 </head>
 <body>
 	<div id='webHeader'>
-    <img src='/assets/y18.gif'/><h1><%= link_to 'Facker News', root_url %></h1>
+    <img src='/assets/original.png'/><h1><%= link_to 'Facker News', root_url %></h1>
     
+  <div id='sign_out'>
     <% if current_user %>
-      Signed in as <strong><%= current_user.name %></strong>!
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      Signed in as <strong><%= current_user.name %></strong> !
+      <%=link_to "Sign out", signout_path%>
     <% else %>
-      <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+      <a href="/auth/google_oauth2">
+        <img id='googlesign'src="/assets/google.png">
+      </a>
     <% end %>
+   </div>
   </div>
 
 <%= yield %>
 <div id='footer'></div>
-<p id='footerParagraph'>Guidelines | FAQ | Support | API | Lists | Bookmarklet | DMCA | Y Combinator | Apply | Contact</p>
-<form id='searchMain' action="demo_form.asp">
-	  Search: <input type="text" name="fname"><br>
-	      <input type="hidden" value="Submit">
-</form>
+<p id='footerParagraph'> Facultat d'Informàtica de Barcelona | Ignacio Lucero | Pol Verdaguer | Zhou Yang Xue | Marc Garnica</p>
 </body>
 </html>
