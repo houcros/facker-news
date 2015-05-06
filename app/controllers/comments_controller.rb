@@ -12,9 +12,9 @@ class CommentsController < ApplicationController
   def show
   end
 
-  # GET /comments/new
+  # GET /comments/new/1
   def new
-    @comment = Comment.new
+    @comment = Comment.new(submit_id: params[:thread])
   end
 
   # GET /comments/1/edit
@@ -25,7 +25,6 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     comment_params[:user_id] = current_user.user_id
-    #comment_params[:submit_id] = 
     @comment = Comment.new(comment_params)
 
     respond_to do |format|

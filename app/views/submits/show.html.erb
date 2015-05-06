@@ -23,7 +23,7 @@
 
 
 <h3 class="strongBody">Comments: </h3>
-<%= link_to 'New comment', new_comment_path %>
+<%= link_to 'New comment', '/comments/new/'+String(@submit.id) %>
 <ul>
     <% @submit.comments.each do |comment| %>
         <li><p>
