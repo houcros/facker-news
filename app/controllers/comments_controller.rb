@@ -24,7 +24,8 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    comment_params[:user_id] = 2
+    comment_params[:user_id] = current_user.user_id
+    #comment_params[:submit_id] = 
     @comment = Comment.new(comment_params)
 
     respond_to do |format|
