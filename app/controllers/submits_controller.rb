@@ -24,6 +24,14 @@ class SubmitsController < ApplicationController
   # POST /submits
   # POST /submits.json
   def create
+    # MODIFY RUBY HASH IN PLACE
+    # Option 1 straight-forward (check out submit_params method)
+    # sp = submit_params
+    # sp[:user_id] = 1
+    # @submit = Submit.new(sp)
+
+    # Option 2 simpler (check out submit_params method)
+    submit_params[:user_id] = 1
     @submit = Submit.new(submit_params)
 
     respond_to do |format|
@@ -75,6 +83,10 @@ class SubmitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def submit_params
-      params.require(:submit).permit(:title, :score, :url, :submit_type, :user_id)
+      # Option 1 straight-forward (check out create method)
+      # params.require(:submit).permit(:title, :score, :url, :submit_type, :user_id)
+
+      # Option 2 simpler (check out create method)
+      @submit_params ||= params.require(:submit).permit(:title, :score, :url, :submit_type, :user_id)
     end
 end
