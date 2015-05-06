@@ -10,10 +10,14 @@
         <td class='itemInfo'><%= submit.score %> points by <%= submit.user.name %> <%= time_ago_in_words(submit.created_at) %> ago | <%= link_to 'comments', submit %></td>
         <td><%= submit.submit_type %></td>
       </tr>
+      <% if current_user %>
+      <% if current_user.user.id == submit.user.id %>
       <tr> 
         <td><%= link_to 'Edit', edit_submit_path(submit) %></td>
         <td><%= link_to 'Destroy', submit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
+      <% end %>
     <% end %>
   </tbody>
 </table>
