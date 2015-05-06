@@ -77,5 +77,6 @@ Rails.application.routes.draw do
 
   # My custom routes
   get '/submits/upvote/:id', to: 'submits#upvote'
+  get '/comments/upvote/:id', to: 'comments#upvote'
 
 end

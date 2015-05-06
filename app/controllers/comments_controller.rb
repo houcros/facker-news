@@ -63,6 +63,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  # GET /comments/upvote/1
+  def upvote
+    @comment = Comment.increment_counter(:score, params[:id])
+    redirect_to '/'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment

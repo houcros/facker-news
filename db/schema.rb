@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150501162339) do
     t.integer  "user_id"
     t.integer  "submit_id"
     t.integer  "parent_id"
+    t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
