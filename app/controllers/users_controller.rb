@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    user_params[:karma] = 1
     @user = User.new(user_params)
 
     respond_to do |format|

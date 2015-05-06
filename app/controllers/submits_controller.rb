@@ -32,6 +32,7 @@ class SubmitsController < ApplicationController
 
     # Option 2 simpler (check out submit_params method)
     submit_params[:user_id] = current_user.user_id
+    submit_params[:score] = 0
     @submit = Submit.new(submit_params)
 
     respond_to do |format|
