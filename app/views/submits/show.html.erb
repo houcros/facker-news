@@ -30,7 +30,7 @@
         <%= link_to '[+]', '/comments/upvote/'+String(comment.id) %>
         <%= link_to comment.user.name, comment.user %> |
         <%= time_ago_in_words(comment.created_at) %> |
-        <%= link_to 'reply', new_comment_path %>
+        <%= link_to 'reply', '/comments/new/'+String(@submit.id)+'/'+String(comment.id) %>
       </p></li>
       <p>
         <%= comment.content %>

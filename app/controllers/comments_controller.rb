@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new/1
   def new
-    @comment = Comment.new(submit_id: params[:thread])
+    @comment = Comment.new(submit_id: params[:submit_id], parent_id: params[:parent_id])
   end
 
   # GET /comments/1/edit

@@ -78,6 +78,6 @@ Rails.application.routes.draw do
   # My custom routes
   get '/submits/upvote/:id', to: 'submits#upvote'
   get '/comments/upvote/:id', to: 'comments#upvote'
-  get '/comments/new/:thread', to: 'comments#new'
-
+  get '/comments/new/:submit_id', to: 'comments#new'
+  get '/comments/new/:submit_id/:parent_id', to: 'comments#new'
 end
