@@ -15,6 +15,16 @@ class Submit < ActiveRecord::Base
     def questions
     	submit_type == "question"
     end
+
+	validates :url, presence: true, if: :news
+	validates :url, absence: true, if: :questions
+    def news
+    	submit_type == "new"
+    end
+    def questions
+    	submit_type == "question"
+    end
+    
 	#validates :url, format: { with: /\A#{URI::regexp}\z/,
     #message: "Please insert a valid URL" }
 
