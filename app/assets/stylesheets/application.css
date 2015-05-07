@@ -138,6 +138,18 @@ body > form {
 	color: #26C6DA;
 }
 
+#editLogout {
+	position:relative;
+}
+
+#a1 {
+	position: absolute;
+	top:30px;
+}
+#hp2 {
+	position: absolute;
+	top:5px;
+}
 a:link {
 	text-decoration: none;
 }
