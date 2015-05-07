@@ -5,7 +5,7 @@
     <% @submits.each do |submit| %>
       <% if submit.submit_type == params[:submit_type] %>
         <tr>
-          <td class='itemTitle'><%= link_to '[+]', '/submits/upvote/'+String(submit.id) %>
+          <td class='itemTitle'>
             <% if submit.url %>
               <%= link_to submit.title, URI.encode(submit.url) %>
               <% @uri = URI.parse(submit.url)%>
@@ -16,7 +16,9 @@
           </td>
         </tr>
         <tr>
-          <td class='itemInfo'><%= submit.score %> points by <%= link_to submit.user.name, submit.user %> <%= time_ago_in_words(submit.created_at) %> ago | <%= submit.comments.length %> <%= link_to 'comments', submit %></td>
+          <td class='itemInfo'>
+          <%= link_to(image_tag("up.png", :height => 15, :width => 15), '/submits/upvote/'+String(submit.id)) %>
+          <%= submit.score %> points by <%= link_to submit.user.name, submit.user %> <%= time_ago_in_words(submit.created_at) %> ago | <%= submit.comments.length %> <%= link_to 'comments', submit %></td>
         </tr>
         <% if current_user %>
           <% if current_user.user.id == submit.user.id %>
