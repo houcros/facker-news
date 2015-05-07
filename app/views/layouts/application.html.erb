@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div id='webHeader'>
-    <img src='/assets/original.png'/><h1 class="headerLink"><%= link_to 'Facker News', root_url %></h1>
+		<img src=<%= asset_path('original.png') %>/><h1 class="headerLink"><%= link_to 'Facker News', root_url %></h1>
     <div id='sign_out' class="headerLink">
       <% if current_user %>
         Signed in as <strong><%= current_user.name %></strong> !
@@ -16,7 +16,7 @@
         <%=link_to 'Edit profile', edit_user_path(current_user) %>
       <% else %>
         <a class="headerLink" href="/auth/google_oauth2">
-          <img id='googlesign'src="/assets/google.png">
+		<img id='googlesign'src=<%= asset_path('google.png') %>/>
         </a>
       <% end %>
     </div>
