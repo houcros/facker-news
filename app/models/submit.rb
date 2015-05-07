@@ -6,7 +6,7 @@ class Submit < ActiveRecord::Base
 	
 	validates :title, presence: true
 	
-	validates :url, format: { with: /\A#{URI::regexp}\z/,
-    message: "Please insert a valid URL" }
+	#validates :url, format: { with: /\A#{URI::regexp}\z/,
+    #message: "Please insert a valid URL" }
     
 end

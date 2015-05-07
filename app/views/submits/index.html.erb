@@ -5,7 +5,15 @@
     <% @submits.each do |submit| %>
       <% if submit.submit_type == params[:submit_type] %>
         <tr>
-          <td class='itemTitle'><%= link_to '[+]', '/submits/upvote/'+String(submit.id) %> <%= link_to submit.title, URI.encode(submit.url) %> (<%= URI.join(submit.url, "/").to_s %>)</td>
+          <td class='itemTitle'><%= link_to '[+]', '/submits/upvote/'+String(submit.id) %>
+            <% if submit.url %>
+              <%= link_to submit.title, URI.encode(submit.url) %>
+              <% @uri = URI.parse(submit.url)%>
+              <% if @uri.host %><%= "(" + @uri.host + ")" %><% end %>
+            <% else %>
+              <%= submit.title %>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <td class='itemInfo'><%= submit.score %> points by <%= submit.user.name %> <%= time_ago_in_words(submit.created_at) %> ago | <%= link_to 'comments', submit %></td>
@@ -16,13 +24,11 @@
               <td><%= link_to 'Edit', edit_submit_path(submit) %></td>
              <td><%= link_to 'Destroy', submit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
+          <% end %>
         <% end %>
-        <% end %>
-        <% end %>
-        <% end %>
+      <% end %>
+    <% end %>
   </tbody>
 </table>
 
 <br>
-
-
