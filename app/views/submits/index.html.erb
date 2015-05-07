@@ -16,7 +16,7 @@
           </td>
         </tr>
         <tr>
-          <td class='itemInfo'><%= submit.score %> points by <%= submit.user.name %> <%= time_ago_in_words(submit.created_at) %> ago | <%= link_to 'comments', submit %></td>
+          <td class='itemInfo'><%= submit.score %> points by <%= submit.user.name %> <%= time_ago_in_words(submit.created_at) %> ago | <%= submit.comments.length %> <%= link_to 'comments', submit %></td>
         </tr>
         <% if current_user %>
           <% if current_user.user.id == submit.user.id %>

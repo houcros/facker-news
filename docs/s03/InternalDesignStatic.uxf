@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="13.2">
-  <zoom_level>8</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
-      <y>200</y>
-      <w>152</w>
-      <h>48</h>
+      <x>594</x>
+      <y>144</y>
+      <w>114</w>
+      <h>36</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;controller&gt;&gt;
-getSubmits
+    <panel_attributes>&lt;&lt;view&gt;&gt;
+Submits:index.html.erb
 --
 
 </panel_attributes>
@@ -19,56 +19,173 @@ getSubmits
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1064</x>
-      <y>184</y>
-      <w>272</w>
-      <h>64</h>
+      <x>324</x>
+      <y>0</y>
+      <w>204</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;model&gt;&gt;
-TrGetSubmits
+Submit
 --
--submits : OrderedSet(Submits)
 --
-execute()
+all
+new
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>208</y>
-      <w>144</w>
-      <h>40</h>
+      <x>420</x>
+      <y>42</y>
+      <w>42</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;use&gt;&gt;
 </panel_attributes>
-    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>208</y>
-      <w>136</w>
-      <h>40</h>
+      <x>648</x>
+      <y>174</y>
+      <w>54</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-&lt;&lt;forward&gt;&gt;
+&lt;&lt;builds&gt;&gt;
 </panel_attributes>
-    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+    <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
-      <y>200</y>
-      <w>152</w>
+      <x>594</x>
+      <y>306</y>
+      <w>114</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;client page&gt;&gt;
+submits
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>144</y>
+      <w>126</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;controller&gt;&gt;
+submits_controller
+--
+-submits
+-submit
+--
+index
+show
+new
+edit
+create
+update
+destroy
+upvote</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>150</y>
+      <w>126</w>
       <h>48</h>
     </coordinates>
+    <panel_attributes>lt=&lt;-
+  &lt;&lt;forwards&gt;&gt; {submits}
+
+
+</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>84</x>
+      <y>144</y>
+      <w>114</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;client page&gt;&gt;
+root
+--
+//will be rendered as Show comment screen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>150</y>
+      <w>180</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;link&gt;&gt;
+{submit_type=new}
+
+
+</panel_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>228</y>
+      <w>126</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;link&gt;&gt;
+{submit}
+
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0;90.0;160.0;190.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>234</y>
+      <w>132</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+  &lt;&lt;forwards&gt;&gt;
+  {submit}
+
+
+</panel_attributes>
+    <additional_attributes>10.0;240.0;130.0;240.0;130.0;10.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>132</x>
+      <y>360</y>
+      <w>114</w>
+      <h>36</h>
+    </coordinates>
     <panel_attributes>&lt;&lt;view&gt;&gt;
-ShowSubmits
+Submits:show.html.erb
 --
 
 </panel_attributes>
@@ -77,36 +194,212 @@ ShowSubmits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>416</x>
-      <y>208</y>
-      <w>128</w>
-      <h>40</h>
+      <x>186</x>
+      <y>390</y>
+      <w>54</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 &lt;&lt;builds&gt;&gt;
 </panel_attributes>
-    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>272</x>
-      <y>200</y>
-      <w>152</w>
-      <h>48</h>
+      <x>132</x>
+      <y>486</y>
+      <w>114</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>&lt;&lt;client page&gt;&gt;
-submits.html
+submits/:id
 --
-//will be rendered as Main</panel_attributes>
+
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>492</y>
+      <w>258</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;link&gt;&gt;
+href = /comments/new/submit_id/comment_id
+
+
+</panel_attributes>
+    <additional_attributes>410.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>200</y>
-      <w>168</w>
+      <x>486</x>
+      <y>486</y>
+      <w>126</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;controller&gt;&gt;
+commments_controller
+--
+-comments
+-comment
+--
+index
+show
+new
+edit
+create
+update
+destroy
+upvote</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>606</x>
+      <y>492</y>
+      <w>126</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+  &lt;&lt;forwards&gt;&gt;
+
+
+</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>486</y>
+      <w>114</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;view&gt;&gt;
+Comments:new.html.erb
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>828</x>
+      <y>492</y>
+      <w>126</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;builds&gt;&gt;
+</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>942</x>
+      <y>486</y>
+      <w>162</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;client page&gt;&gt;
+comments/new/submit_id/comment_id
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1026</x>
+      <y>528</y>
+      <w>18</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>948</x>
+      <y>576</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;form&gt;&gt;
+Comments:_form.html.erb
+--
+content: Label
+content: TextArea
+submit_id: HiddenField
+parent_id: HiddenField
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>606</x>
+      <y>570</y>
+      <w>354</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+  &lt;&lt;submit&gt;&gt;
+
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;570.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>690</y>
+      <w>204</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;model&gt;&gt;
+Comment
+--
+--
+all
+new
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>588</y>
+      <w>42</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>792</x>
+      <y>264</y>
+      <w>90</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>bg=blue
@@ -118,140 +411,33 @@ Main
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>208</y>
-      <w>88</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-
-</panel_attributes>
-    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>784</x>
-      <y>416</y>
-      <w>152</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;controller&gt;&gt;
-getComments
---
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>344</x>
-      <y>240</y>
-      <w>456</w>
-      <h>192</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-  &lt;&lt;link&gt;&gt;
-  
-{idSubmit}
-
-</panel_attributes>
-    <additional_attributes>550.0;220.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1072</x>
-      <y>408</y>
-      <w>272</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;model&gt;&gt;
-TrGetComments
---
--idSubmit
--idComment
--comments: OrderedSet(Comments)
---
-execute()
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>928</x>
-      <y>424</y>
-      <w>160</w>
-      <h>40</h>
+      <x>702</x>
+      <y>282</y>
+      <w>102</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
-&lt;&lt;use&gt;&gt;
 </panel_attributes>
-    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>512</x>
-      <y>408</y>
-      <w>152</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;view&gt;&gt;
-ShowSubmitComments
---
-
-</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes>10.0;70.0;150.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
-      <y>416</y>
-      <w>104</w>
-      <h>40</h>
+      <x>84</x>
+      <y>312</y>
+      <w>84</w>
+      <h>60</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-&lt;&lt;builds&gt;&gt;
+    <panel_attributes>lt=.&gt;
 </panel_attributes>
-    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+    <additional_attributes>120.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>280</x>
-      <y>408</y>
-      <w>152</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;client page&gt;&gt;
-subComments.html
---
-//will be rendered as Show Submitions screen</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>184</x>
-      <y>416</y>
-      <w>112</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-
-</panel_attributes>
-    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
+    <id>UMLGeneric</id>
     <coordinates>
       <x>0</x>
-      <y>408</y>
-      <w>192</w>
+      <y>270</y>
+      <w>132</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>bg=blue
@@ -263,139 +449,21 @@ Show submittion's comments
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>656</x>
-      <y>424</y>
-      <w>144</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-&lt;&lt;forward&gt;&gt;
-</panel_attributes>
-    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>352</x>
-      <y>448</y>
-      <w>520</w>
-      <h>184</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
- &lt;&lt;link&gt;&gt;
-
-{idComment}
-
-</panel_attributes>
-    <additional_attributes>630.0;210.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>776</x>
-      <y>616</y>
-      <w>152</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;controller&gt;&gt;
-getComment
---
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>920</x>
-      <y>624</y>
-      <w>160</w>
-      <h>40</h>
+      <x>1032</x>
+      <y>444</y>
+      <w>66</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
-&lt;&lt;use&gt;&gt;
 </panel_attributes>
-    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+    <additional_attributes>10.0;70.0;90.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>UMLGeneric</id>
     <coordinates>
-      <x>1064</x>
-      <y>608</y>
-      <w>280</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;model&gt;&gt;
-TrGetnfoComment
---
--idComment
--infoComment(Tupla amb tots els atributs)
---
-execute()
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>544</x>
-      <y>616</y>
-      <w>152</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;view&gt;&gt;
-ShowComment
---
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>688</x>
-      <y>624</y>
-      <w>104</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-&lt;&lt;forward&gt;&gt;
-</panel_attributes>
-    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>288</x>
-      <y>616</y>
-      <w>152</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;client page&gt;&gt;
-comment.html
---
-//will be rendered as Show comment screen</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>432</x>
-      <y>624</y>
-      <w>128</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-&lt;&lt;builds&gt;&gt;
-</panel_attributes>
-    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>8</x>
-      <y>616</y>
-      <w>192</w>
+      <x>1074</x>
+      <y>402</y>
+      <w>90</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>bg=blue
@@ -403,131 +471,5 @@ comment.html
 Show comment
 </panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>192</x>
-      <y>624</y>
-      <w>112</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-
-</panel_attributes>
-    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>352</x>
-      <y>656</y>
-      <w>24</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>288</x>
-      <y>736</y>
-      <w>128</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;form&gt;&gt;
-EditReply
---
-text : String</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>408</x>
-      <y>744</y>
-      <w>208</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-&lt;&lt;submit&gt;&gt;
-</panel_attributes>
-    <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>600</x>
-      <y>736</y>
-      <w>152</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;controller&gt;&gt;
-postReply
---
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>920</x>
-      <y>736</y>
-      <w>280</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;model&gt;&gt;
-TrPostReply()
---
-text:String
---
-execute()
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>744</x>
-      <y>744</y>
-      <w>192</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;use&gt;&gt;
-</panel_attributes>
-    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>792</x>
-      <y>64</y>
-      <w>152</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;client page&gt;&gt;
-submits.html
---
-//will be rendered as Show comment screen</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>864</x>
-      <y>104</y>
-      <w>56</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-  &lt;&lt;link&gt;&gt;
-
-
-</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
