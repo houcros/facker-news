@@ -13,6 +13,7 @@
       <% if current_user %>
         Signed in as <strong><%= current_user.name %></strong> !
         <%=link_to "Sign out", signout_path%>
+        <%=link_to 'Edit profile', edit_user_path(current_user) %>
       <% else %>
         <a class="headerLink" href="/auth/google_oauth2">
           <img id='googlesign'src="/assets/google.png">
