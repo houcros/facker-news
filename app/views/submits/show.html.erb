@@ -28,6 +28,7 @@
     <% @submit.comments.each do |comment| %>
         <li><p>
         <%= link_to '[+]', '/comments/upvote/'+String(comment.id) %>
+        <%= comment.score %> points by
         <%= link_to comment.user.name, comment.user %> |
         <%= time_ago_in_words(comment.created_at) %> |
         <%= link_to 'reply', '/comments/new/'+String(@submit.id)+'/'+String(comment.id) %>

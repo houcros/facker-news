@@ -65,7 +65,7 @@ class CommentsController < ApplicationController
   # GET /comments/upvote/1
   def upvote
     @comment = Comment.increment_counter(:score, params[:id])
-    redirect_to '/'
+    redirect_to request.referrer
   end
 
   private
