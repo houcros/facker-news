@@ -28,6 +28,10 @@
     <%= f.submit %>
   </div>
 
-  <%= javascript_include_tag "application" %>
+  <script type="text/javascript">
+      $("#submit_submit_type").change(function() {
+        $("#submit_url_field").toggle();
+    });
+  </script>
 
 <% end %>
