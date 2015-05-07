@@ -15,15 +15,19 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
+  <div class="field" id="submit_url_field">
     <%= f.label :url %><br>
     <%= f.url_field(:url) %>
   </div>
   <div>
     <%= f.label :submit_type %><br>
-    <%= f.select :submit_type , options_for_select(%w[new question]) %>
+    <%= f.select :submit_type, options_for_select(%w[new question]) %>
   </div>
+  <br><br>
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  <%= javascript_include_tag "application" %>
+
 <% end %>
