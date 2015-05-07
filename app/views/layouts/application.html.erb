@@ -15,7 +15,7 @@
 	<div id="editLogout"><div class="headerLink" id='a1'>
 		<%=link_to "Sign out", signout_path%>
     	</div>
-	<div class="headerLink" id="hp2">   <%=link_to 'Edit profile', edit_user_path(current_user) %></div>
+	<div class="headerLink" id="hp2">   <%=link_to 'Edit profile', edit_user_path(current_user.user) %></div>
 </div>
       <% else %>
         <a class="headerLink" href="/auth/google_oauth2">
