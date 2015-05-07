@@ -24,13 +24,15 @@
 </table>
 
 <%= link_to 'Edit', edit_submit_path(@submit) %> |
-<%= link_to 'Back', submits_path %>
+<%= link_to 'Back', submits_path+'?submit_type=new' %>
 
 
 <h3 class="strongBody">Comments: </h3>
 <%= link_to 'New comment', '/comments/new/'+String(@submit.id) %>
 <ul>
     <% @submit.comments.each do |comment| %>
+
+      <%if comment.parent_id.nil? %>
         <li><p>
         <%= link_to '[+]', '/comments/upvote/'+String(comment.id) %>
         <%= comment.score %> points by
@@ -41,5 +43,19 @@
       <p>
         <%= comment.content %>
       </p>
+      <% @submit.comments.each do |reply| %>
+        <%if reply.parent_id == comment.id%>
+          <blockquote><li type='circle'>
+          <%= link_to '[+]', '/comments/upvote/'+String(reply.id) %>
+          <%= reply.score %> points by
+          <%= link_to reply.user.name, reply.user %> |
+          <%= time_ago_in_words(reply.created_at) %> |
+        </li></blockquote>
+        <blockquote>
+          <%= reply.content %>
+        </blockquote>
+        <%end%>
+        <%end%>
+      <%end%>
     <% end %>
 </ul>
