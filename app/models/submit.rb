@@ -1,5 +1,6 @@
 class Submit < ActiveRecord::Base
 	#attr_accessible :submit_type, :url
+	acts_as_votable
 	belongs_to :user
 	has_many :comments
 	

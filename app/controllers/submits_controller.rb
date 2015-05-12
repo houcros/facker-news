@@ -76,7 +76,13 @@ class SubmitsController < ApplicationController
 
   # GET /submits/upvote/1
   def upvote
-    @submit = Submit.increment_counter(:score, params[:id])
+    @submit = Submit.find(params[:id])
+    if current_user
+      if not current_user.voted_for? @submit
+         current_user.up_votes @submit
+         Submit.increment_counter(:score, params[:id])
+      end
+    end
     redirect_to '/'
   end
 

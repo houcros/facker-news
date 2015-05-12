@@ -26,6 +26,9 @@
     <div class="headerLink"><%= link_to 'News', submits_path+'?submit_type=new'%></div>
     <div class="headerLink"><%= link_to 'Questions', submits_path+'?submit_type=question'%></div>
   </div>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-info" %>
+  <% end %>
   
 <%= yield %>
 <div id='footer'></div>
