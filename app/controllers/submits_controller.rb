@@ -81,12 +81,11 @@ class SubmitsController < ApplicationController
       if not current_user.voted_for? @submit
          current_user.up_votes @submit
          Submit.increment_counter(:score, params[:id])
-         redirect_to '/'
       end
+      redirect_to '/'
     else
       redirect_to submits_path+'?submit_type=new', alert: "Log in for voting the news."
     end
-    
   end
 
   private
