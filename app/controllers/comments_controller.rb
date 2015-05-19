@@ -4,7 +4,11 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    if not params[:submit_id]
+      @comments = Comment.all
+    else
+      @comments = Comment.where("submit_id = ?", params[:submit_id])
+    end
   end
 
   # GET /comments/1
@@ -24,7 +28,11 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    comment_params[:user_id] = current_user.user_id
+    if current_user
+      comment_params[:user_id] = current_user.user_id
+    else
+      comment_params[:user_id] = 1
+    end
     comment_params[:score] = 0
 
     @comment = Comment.new(comment_params)
@@ -65,9 +73,13 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/upvote/1
+  # GET /comments/upvote/1.json
   def upvote
     @comment = Comment.increment_counter(:score, params[:id])
-    redirect_to request.referrer
+    respond_to do |format|
+      format.html {redirect_to request.referrer}
+      format.json { render :show, status: :ok, location: @comment }
+    end
   end
 
   private

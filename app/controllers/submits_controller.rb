@@ -4,7 +4,13 @@ class SubmitsController < ApplicationController
   # GET /submits
   # GET /submits.json
   def index
-    @submits = Submit.all
+    if params[:submit_type]
+      @submits = Submit.where("submit_type = ?", params[:submit_type])
+    else
+      @submits = Submit.all
+    end
+
+
   end
 
   # GET /submits/1
@@ -75,6 +81,7 @@ class SubmitsController < ApplicationController
   end
 
   # GET /submits/upvote/1
+  # GET /submits/upvote/1.json
   def upvote
     @submit = Submit.find(params[:id])
     if current_user
@@ -82,9 +89,15 @@ class SubmitsController < ApplicationController
          current_user.up_votes @submit
          Submit.increment_counter(:score, params[:id])
       end
-      redirect_to '/'
+      respond_to do |format|
+        format.html { redirect_to '/' }
+        format.json { render :show, status: :created, location: @submit }
+      end
     else
-      redirect_to submits_path+'?submit_type=new', alert: "Log in for voting the news."
+      respond_to do |format|
+        format.html {redirect_to submits_path+'?submit_type=new', alert: "Log in for voting the news." }
+        format.json {render json: @submit.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -100,6 +113,6 @@ class SubmitsController < ApplicationController
       # params.require(:submit).permit(:title, :score, :url, :submit_type, :user_id)
 
       # Option 2 simpler (check out create method)
-      @submit_params ||= params.require(:submit).permit(:title, :score, :url, :submit_type, :user_id)
+      @submit_params ||= params.permit(:title, :score, :url, :submit_type, :user_id)
     end
 end
