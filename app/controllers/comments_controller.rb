@@ -4,10 +4,14 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    if not params[:submit_id]
+    if not params[:submit_id] and not params[:parent_id]
       @comments = Comment.all
     else
-      @comments = Comment.where("submit_id = ?", params[:submit_id])
+      if params[:submit_id]
+        @comments = Comment.where("submit_id = ?", params[:submit_id])
+      else
+        @comments = Comment.where("parent_id = ?", params[:parent_id])
+      end
     end
   end
 

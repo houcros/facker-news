@@ -1,0 +1,166 @@
+# this is an example of the Uber API
+# as a demonstration of an API spec in YAML
+swagger: '2.0'
+info:
+  title: Facker-news API
+  description: Add news,questions and discussions in your app with Facker-news API
+  version: "1.0.0"
+# the domain of the service
+host: facker-news.herokuapp.com
+# array of all schemes that your API supports
+schemes:
+  - https
+# will be prefixed to all paths
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /submits.json:
+    get:
+      summary: List all submits
+      description: |
+        Returns information about the Facker-news submits listed in the web.
+        The response includes basic infomation about every submits, further
+        API calls are needed for getting much information about an specific submit.
+      parameters:
+        - name: submit_type
+          in: query
+          description: Submit type {new || question}
+          required: false
+          type: string
+          format: string
+      tags:
+        - submits
+      responses:
+        200:
+          description: An array of submits
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Submit'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /comments.json:
+    get:
+      summary: Comments of the submits
+      description: |
+        Returns information about the Facker-news comments of the submits listed in the web.
+      parameters:
+        - name: submit_id
+          in: query
+          description: Submit where the comments has been posted.
+          required: false
+          type: string
+          format: string
+        - name: parent_id
+          in: query
+          description: Comment which has been replied.
+          required: false
+          type: string
+          format: string
+      tags:
+        - comments
+      responses:
+        200:
+          description: An array of comments
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Comment'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /submits/upvote/1.json:
+    get:
+      summary: Upvote submits
+      description: |
+        Let the user upvote one submit and returns the information of that submit.
+        The identifier of the submit must be included in the URL.
+      tags:
+        - upvote submits
+      responses:
+        200:
+          description: The submit upvoted.
+          schema:
+            $ref: '#/definitions/Submit'
+        422:
+          description: Unprocessable entity. You are logged out.
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /comments/upvote/1.json:
+    get:
+      summary: Upvote comments
+      description: |
+        Let the user upvote one comment and returns the information of that comment.
+        The identifier of the comment must be included in the URL.
+      tags:
+        - upvote comments
+      responses:
+        200:
+          description: The comment upvoted.
+          schema:
+            $ref: '#/definitions/Comment'
+        422:
+          description: Unprocessable entity. You are logged out.
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Submit:
+    properties:
+      id:
+        type: integer
+        description: Unique identifier representing a specific submit.
+      title:
+        type: string
+        description: Title of the submit.
+      score:
+        type: integer
+        description: Current score of the submit.
+      url:
+        type: string
+        description: Link to the more specific information about the submit.
+      submit_type:
+        type: string
+        description: Submit type, new or question.
+      user_id:
+        type: integer
+        description: User who published the submit.
+  Comment:
+    properties:
+      id:
+        type: integer
+        description: Unique identifier representing a specific comment.
+      content:
+        type: string
+        description: Text included in the comment.
+      user_id:
+        type: integer
+        description: Owner of the comment.
+      submit_id:
+        type: integer
+        description: Submit where the comment has been posted
+      parent_id:
+        type: integer
+        description: Comment which has been replied with this comment. If it is not a reply this is 0
+      created_at:
+        type: string
+        description: Date when the comment was created.
+      updated_at:
+        type: string
+        description: Date of the last update of the comment.
+  Error:
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
