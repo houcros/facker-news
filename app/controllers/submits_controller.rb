@@ -37,7 +37,10 @@ class SubmitsController < ApplicationController
     # @submit = Submit.new(sp)
 
     # Option 2 simpler (check out submit_params method)
-    submit_params[:user_id] = current_user.user_id
+    if current_user
+      submit_params[:user_id] = current_user.user_id
+    end
+
     submit_params[:score] = 0
     if submit_params[:submit_type] == 'question'
       submit_params[:url] = nil
@@ -113,6 +116,6 @@ class SubmitsController < ApplicationController
       # params.require(:submit).permit(:title, :score, :url, :submit_type, :user_id)
 
       # Option 2 simpler (check out create method)
-      @submit_params ||= params.permit(:title, :score, :url, :submit_type, :user_id)
+      @submit_params ||= params.require(:submit).permit(:title, :score, :url, :submit_type, :user_id)
     end
 end
