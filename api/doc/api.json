@@ -2,12 +2,13 @@
     "swagger": "2.0",
     "info": {
         "title": "Facker-news API",
-        "description": "Add news,questions and discussions in your app with Facker-news API",
+        "description": "Add news, questions and discussions in your app with Facker-news API",
         "version": "1.0.0"
     },
     "host": "facker-news.herokuapp.com",
     "schemes": [
-        "https"
+        "https",
+        "http"
     ],
     "basePath": "/v1",
     "produces": [
@@ -17,7 +18,7 @@
         "/submits.json": {
             "get": {
                 "summary": "List all submits",
-                "description": "Returns information about the Facker-news submits listed in the web.\nThe response includes basic infomation about every submits, further\nAPI calls are needed for getting much information about an specific submit.\n",
+                "description": "Returns information about the Facker-news submits listed in the web.\nThe response includes basic infomation about every submit, further\nAPI calls are needed for getting much information about an specific submit.\n",
                 "parameters": [
                     {
                         "name": "submit_type",
@@ -46,6 +47,88 @@
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "submit"
+                ],
+                "summary": "Add a new submit to the app",
+                "description": "Create a new submit of type new or question in the app.\n",
+                "operationId": "addSubmit",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Submit object that needs to be added to the app",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Submit"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A JSON object containing the submit created.",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/Submit_timestamp"
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/submits/{submitId}": {
+            "get": {
+                "tags": [
+                    "submit"
+                ],
+                "summary": "Find submit by ID",
+                "description": "Returns a submit whith ID if it exists",
+                "operationId": "getSubmitById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "submitId",
+                        "in": "path",
+                        "description": "ID of submit that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "minimum": 1,
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Submit"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Submit not found"
                     }
                 }
             }
@@ -90,6 +173,88 @@
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "comment"
+                ],
+                "summary": "Add a new comment to a submit or another comment",
+                "description": "Create a new comment on a submit, or on a previous comment. We say that a comment on a comment is a reply.\n",
+                "operationId": "addComment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Comment object that needs to be added to the app",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Comment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A JSON object containing the comment created.",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/Comment_timestamp"
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/comments/{commentId}": {
+            "get": {
+                "tags": [
+                    "comment"
+                ],
+                "summary": "Find comment by ID",
+                "description": "Returns a comment whith ID if it exists",
+                "operationId": "getCommentById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "description": "ID of comment that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "minimum": 1,
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Comment"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Comment not found"
                     }
                 }
             }
@@ -163,6 +328,114 @@
                     }
                 }
             }
+        },
+        "/users.json": {
+            "get": {
+                "summary": "List all users",
+                "description": "Returns information about the Facker-news users.\n",
+                "tags": [
+                    "users"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array of users",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/User"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Add a new user to the app",
+                "description": "Create a new user in the app.\n",
+                "operationId": "addUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "User object that needs to be added to the app",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A JSON object containing the user created.",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/User_timestamp"
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{userId}": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Find user by ID",
+                "description": "Returns a user whith ID if it exists",
+                "operationId": "getUserById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "ID of user that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "minimum": 1,
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -186,11 +459,47 @@
                 },
                 "submit_type": {
                     "type": "string",
-                    "description": "Submit type, new or question."
+                    "description": "Submit type either a new or a question."
                 },
                 "user_id": {
                     "type": "integer",
                     "description": "User who published the submit."
+                }
+            }
+        },
+        "Submit_timestamp": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique identifier representing a specific submit."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Title of the submit."
+                },
+                "score": {
+                    "type": "integer",
+                    "description": "Current score of the submit."
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Link to the more specific information about the submit."
+                },
+                "submit_type": {
+                    "type": "string",
+                    "description": "Submit type either a new or a question."
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": "User who published the submit."
+                },
+                "created_at": {
+                    "type": "string",
+                    "description": "Time when the submit was created."
+                },
+                "updated_at": {
+                    "type": "string",
+                    "description": "Time of the last modification of the submit."
                 }
             }
         },
@@ -215,14 +524,94 @@
                 "parent_id": {
                     "type": "integer",
                     "description": "Comment which has been replied with this comment. If it is not a reply this is 0"
+                }
+            }
+        },
+        "Comment_timestamp": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique identifier representing a specific comment."
+                },
+                "content": {
+                    "type": "string",
+                    "description": "Text included in the comment."
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": "Owner of the comment."
+                },
+                "submit_id": {
+                    "type": "integer",
+                    "description": "Submit where the comment has been posted"
+                },
+                "parent_id": {
+                    "type": "integer",
+                    "description": "Comment which has been replied with this comment. If it is not a reply this is 0"
                 },
                 "created_at": {
                     "type": "string",
-                    "description": "Date when the comment was created."
+                    "description": "Time when the comment was created."
                 },
                 "updated_at": {
                     "type": "string",
-                    "description": "Date of the last update of the comment."
+                    "description": "Time of the last update of the comment."
+                }
+            }
+        },
+        "User": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique identifier representing a specific user."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the user."
+                },
+                "karma": {
+                    "type": "integer",
+                    "description": "Reputation of the user based on his contributions."
+                },
+                "about": {
+                    "type": "string",
+                    "description": "A brief statement about the user."
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The url where the specific user resource is located."
+                }
+            }
+        },
+        "User_timestamp": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique identifier representing a specific user."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the user."
+                },
+                "karma": {
+                    "type": "integer",
+                    "description": "Reputation of the user based on his contributions."
+                },
+                "about": {
+                    "type": "string",
+                    "description": "A brief statement about the user."
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The url where the specific user resource is located."
+                },
+                "created_at": {
+                    "type": "string",
+                    "description": "Time when the user was created."
+                },
+                "updated_at": {
+                    "type": "string",
+                    "description": "Time of the last update of the user."
                 }
             }
         },
