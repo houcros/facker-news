@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
 #ruby '2.2.2'
-ruby '2.2.1'
+ruby '2.1.5'
 #ruby '2.0.0'
 
+#Rack::Cors
+gem 'rack-cors', :require => 'rack/cors'
 #upvote gem
 gem 'acts_as_votable'
 # Figaro for security issues
